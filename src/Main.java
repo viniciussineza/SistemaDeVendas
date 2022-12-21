@@ -1,17 +1,15 @@
 public class Main {
 
-    private static GerarNumeros gerarVenda = new GerarNumeros();
     private static  GerarNomes gerarNomes = new GerarNomes();
 
     public static void main(String[] args) {
 
-        System.out.println("Bem vindo ao Financeiro Ba'mal kul juhdi");
+        System.out.println("############ Bem vindo ao Financeiro Ba'mal kul juhdi ############");
 
         String[] nomesVendedoresEspeciarias = gerarNomes.nomesVendedoresGerados();
-        String[] nomesVendedoresTecidos = gerarNomes.nomesVendedoresGerados();;
-        String[] nomesVendedoresCamelos = gerarNomes.nomesVendedoresGerados();;
+        String[] nomesVendedoresTecidos = gerarNomes.nomesVendedoresGerados();
+        String[] nomesVendedoresCamelos = gerarNomes.nomesVendedoresGerados();
         String[] nomesCompradores = gerarNomes.nomesVendedoresGerados();
-
 
         // int[] vendas = gerarVenda.gerarVendas(nomesVendedoresEspeciarias.length); // TODO criar método compras e passar as vendas para cada vendedor
 
@@ -19,7 +17,7 @@ public class Main {
         String localTecidos = "Egito";
         String localCamelos = "Arabia";
 
-        String nomeMercadoEspeciarias = "Mercado de Especiarias Zattar";
+        String nomeMercadoEspeciarias = "Mercado de Especiarias Zattar"; // Zattar == tempero
         String nomeMercadoTecidos = "Mercado de Tecidos Qumash"; // Qumash == pano
         String nomeMercadoCamelos = "Mercado de Camelos Jamal"; // Jamal == Camelo
 
@@ -29,31 +27,16 @@ public class Main {
             vendedoresEspeciarias[i] = new Vendedor(nomesVendedoresEspeciarias[i]);
         }
 
-        System.out.println("##################### VENDEDORES ESPECIARIAS #####################");
-        for (int i = 0; i < vendedoresEspeciarias.length; i++) {
-            System.out.println(vendedoresEspeciarias[i]);
-        }
-
         Vendedor[] vendedoresTecidos = new Vendedor[nomesVendedoresTecidos.length];
 
         for (int i = 0; i < nomesVendedoresTecidos.length; i++) {
             vendedoresTecidos[i] = new Vendedor(nomesVendedoresTecidos[i]);
         }
 
-        System.out.println("##################### VENDEDORES TECIDOS #####################");
-        for (int i = 0; i < vendedoresTecidos.length; i++) {
-            System.out.println(vendedoresTecidos[i]);
-        }
-
         Vendedor[] vendedoresCamelos = new Vendedor[nomesVendedoresCamelos.length];
 
         for (int i = 0; i < vendedoresCamelos.length; i++) {
             vendedoresCamelos[i] = new Vendedor(nomesVendedoresCamelos[i]);
-        }
-
-        System.out.println("##################### VENDEDORES CAMELOS #####################");
-        for (int i = 0; i < vendedoresCamelos.length; i++) {
-            System.out.println(vendedoresCamelos[i]);
         }
 
         Mercado mercadoEspeciarias = new Mercado(vendedoresEspeciarias, nomeMercadoEspeciarias);
@@ -76,7 +59,20 @@ public class Main {
 
         //TODO Apresentação e Ranking
 
+        System.out.println(mercadoEspeciarias.imprimirMercado(mercadoEspeciarias));
+        for (int i = 0; i < vendedoresEspeciarias.length; i++) {
+            System.out.println(vendedoresEspeciarias[i]);
+        }
 
+        System.out.println(mercadoTecidos.imprimirMercado(mercadoTecidos));
+        for (int i = 0; i < vendedoresTecidos.length; i++) {
+            System.out.println(vendedoresTecidos[i]);
+        }
+
+        System.out.println(mercadoCamelos.imprimirMercado(mercadoCamelos));
+        for (int i = 0; i < vendedoresCamelos.length; i++) {
+            System.out.println(vendedoresCamelos[i]);
+        }
 
     }
 

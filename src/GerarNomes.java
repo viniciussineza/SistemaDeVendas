@@ -5,7 +5,7 @@ import java.util.Random;
 public class GerarNomes {
     // TODO refatorar número aleatório;
     private Random random = new Random();
-    private String[] nomesDisponíveis = new String[] {
+    private static final String[] nomesDisponiveis = new String[] {
             "Muhammad", "Said", "Omar", "Ali", "Hassan",
             "Jamal", "Zayn", "Layla", "Khadija", "Malika",
             "Aisha", "Ahmed", "Ziad", "Haya", "Isla",
@@ -17,29 +17,28 @@ public class GerarNomes {
             "Hibo", "Imamu", "Idir", "Makena", "Ola",
             "Zendaya", "Zola", "Dania", "keket", "Ada"
     };
-    private String[] nomesVendedoresGerados = new String[10];
 
+    //private String[] nomesVendedoresGerados = new String[10]; - Por que criando o array aqui, ele não gera arrays novos?
 
-    private void nomesVendedores() {
+    public String[] nomesVendedoresGerados() {
+
+        String[] nomesVendedoresGerados = new String[10]; // Criando o array aqui, ele gera arrays novos
 
         for (int i = 0; i < nomesVendedoresGerados.length; i++) {
 
-            String nome = nomesDisponíveis[random.nextInt(nomesDisponíveis.length)];
+            String nome = nomesDisponiveis[random.nextInt(nomesDisponiveis.length)];
 
             for (int j = 0; j < nomesVendedoresGerados.length; j++ ) {
                 if (nome == nomesVendedoresGerados[j]) {
-                    nome = nomesDisponíveis[random.nextInt(nomesDisponíveis.length)];
+                    nome = nomesDisponiveis[random.nextInt(nomesDisponiveis.length)];
                 }
             }
 
             nomesVendedoresGerados[i] = nome;
         }
-        // TODO - NÃO REPETIR NOME
+
+        return nomesVendedoresGerados;
     }
 
-    public String[] nomesVendedoresGerados() {
-        nomesVendedores();
-        return this.nomesVendedoresGerados;
-    }
 
 }

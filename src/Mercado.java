@@ -10,10 +10,11 @@ public class Mercado {
         this.nomeMercado = nomeMercado;
     }
 
+    public String getNomeMercado() { return this.nomeMercado; }
     public void setLocalizacaoMercado(String localizacaoMercado) {
         this.localizacaoMercado = localizacaoMercado;
     }
-
+    public String getLocalizacaoMercado() { return this.localizacaoMercado; }
     public Vendedor[] getVendedores() {
         return vendedores;
     }
@@ -31,4 +32,26 @@ public class Mercado {
 
         }
     }
+
+    public String imprimirMercado(Mercado mercado) {
+        String nomeMercado = mercado.getNomeMercado();
+        String localMercado = mercado.getLocalizacaoMercado();
+        return "\n" +
+                "Mercado: " + nomeMercado +
+                "\n" +
+                "Local: " + localMercado +
+                "#########################################";
+    }
+
+    public
+
+
+    // TODO Criação do ranking de vendedores
+
+    // TODO Criação do ranking de compradore
+
+    // TODO como calcular o mercado mais lucrativo ( soma das vendas do mercado e comparando)
+
+    // TODO Apresentação { Nome Mercado - Local - Vendedores { top 3 } }
+
 }

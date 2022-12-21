@@ -2,17 +2,18 @@ import java.util.Random;
 
 public class Comprador {
 
+    private static Random random = new Random();
     private GerarNumeros numero = new GerarNumeros();
     private String nome;
 
-    private int venda;
+    private double venda;
 
     public Comprador (String nome) {
         this.nome = nome;
     }
 
     public void comprar(Vendedor vendedor) {
-        this.venda = numero.numeroAleatorio(1);
+        this.venda = random.nextInt(1000);
         vendedor.vendasRealizadas(venda);
     }
 
