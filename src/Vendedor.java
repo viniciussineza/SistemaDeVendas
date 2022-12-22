@@ -27,6 +27,8 @@ public class Vendedor {
         return valorVenda;
     }
 
+    public String getNome() { return this.nome; }
+
     @Override
     public String toString() {
         return "Vendedor(a) " + this.nome + " vendeu " + this.valorVenda;
